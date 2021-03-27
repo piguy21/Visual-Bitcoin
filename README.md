@@ -2,12 +2,20 @@
 
 Stay informed on the price of Bitcoin where ever you are.
 
+Introduction:
+This website retrives real time data about Bitcoin Prices over time. This data is ploted on a line graph and displayed on the website. 
+
+Technology Stack:
+Frontend- HTML, CSS, JavaScript
+Backend-Python
+
+Data Libraries- JSON and Requests
+Visualization Libraries-Matplotlib and Numpy
+
 Important things to Know
 1. Easy to use
 2. Great UI
 3. Awesome user experience
-
-Visual Bitcoin uses Python, HTML, CSS, JavaScript to make realtime graphs and tables that show you the price of Bitcoin over a week, month and year.
 
 Future Plans
 1. Getting data for more than one Cryptocurrency
