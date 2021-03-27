@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>About</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .w3-bar .w3-button {
+            padding: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="/home" class="w3-bar-item w3-button w3-wide">Visual Bitcoin</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a  href="/home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+      <a href="/about" class="w3-bar-item w3-button">ABOUT</a>
+      <div class="w3-dropdown-hover">
+          <button class="w3-button w3-button"><a style="text-decoration: none;" href="/week">VISUALIZER</a></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/week" class="w3-bar-item w3-button">Week</a>
+            <a href="/month" class="w3-bar-item w3-button">Month</a>
+            <a href="/year" class="w3-bar-item w3-button">Year</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- About Section -->
+    <div class="w3-container" style="padding: 128px 16px" id="about">
+        <h3 class="w3-center" style="font-weight: bolder;">ABOUT</h3>
+        <div class="w3-row-padding w3-center" style="margin-top: 64px">
+            <div class="w3-third">
+                <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+                <p class="w3-large" style="font-weight: bolder;">STAY INFORMED</p>
+                <p>
+                    Stay Imformed on the Price of Bitcoin where ever you are so you know when to invest in it.
+                </p>
+            </div>
+            <div class="w3-third">
+                <i class="fa fa-pencil w3-margin-bottom w3-jumbo" ></i>
+                <p class="w3-large"  style="font-weight: bolder;">DESIGN</p>
+                <p>
+                    Using some coding magic we took our website's UI to the next level so you can enjoy our website more.  
+                </p>
+            </div>
+            <div class="w3-third">
+                <i class="fa fa-gear w3-margin-bottom w3-jumbo"></i>
+                <p class="w3-large"  style="font-weight: bolder;">SUPPORT</p>
+                <p>
+                    Our website is running 24/7 and is ready to give you the price of Bitcoin when ever you need it.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+</body>
+
+</html>

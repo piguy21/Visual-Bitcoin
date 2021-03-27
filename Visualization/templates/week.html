@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Week Data</title>
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+        }
+        #graphweek,
+        #tableweek {
+            padding-left: 15%;
+        }
+        .loader{
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+            border:10px solid transparent;
+            border-top-color: rgb(73, 73, 73);
+            border-radius: 50%;
+            animation: loading-animation 1s ease  infinite;
+        }
+
+        .none{
+            display: none;
+        }
+
+        .loader_body{
+             background-color: white;
+             z-index: 99999999999999999998;
+             width: 100%;
+             height: 100%;
+        }
+
+
+        @keyframes loading-animation {
+            from{
+                transform: rotate(0turn);
+            }
+            to{
+                transform: rotate(1turn);
+            }
+        }
+
+        .w3-bar-item:hover{
+            background-color: #cecece;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+        <div class="loader_body" id="loader_background"></div>
+        <div class="loader"></div>
+        <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px">
+        <br>
+        <br>
+        <div class="button-pad">
+            <a href="/home" class="w3-bar-item" style="text-decoration: none;">Back</a>
+            <h6 class="w3-bar-item">Weekly</h6>
+            <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'graphweek');">Graph</button>
+            <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'tableweek')">Table</button>
+        </div>
+    </div>
+
+        <div id="graphweek" class="w3-container sidebutton w3-animate-left w3-padding-top-64">
+        <br>
+        <h2>Graph over a Week:</h2>
+        <div class="w3-container w3-center none" id="graphweekimg">
+            <img src="../static/{{filename}}">
+        </div>
+    </div>
+
+    <div id="tableweek" class="w3-container sidebutton w3-animate-left w3-padding-top-64" style="display:none">
+        <h2>Table over a Week:</h2>
+        <div class="w3-container w3-center">
+            <table class="w3-table-all">
+                <thead>
+                    <tr class="w3-black">
+                        <th>Date (Year-Month-Day)</th>
+                        <th>Price ($)</th>
+                    </tr>
+                </thead>
+                {% for row in dataweek%}
+                <tr>
+                    {% for item in row%}
+                        <td>{{item}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+<script>
+    function openLink(evt, animName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("sidebutton");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(animName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+                function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+        }
+
+        window.addEventListener("load", function (){
+            play_animation_for_1sec()
+        });
+        function play_animation_for_1sec(){
+            const loader = document.querySelector(".loader");
+            const body = document.querySelector("body");
+            const div = document.getElementById("loader_background");
+            const nav = document.getElementById("graphweekimg")
+
+            sleep(1500);
+            div.style.display = "none";
+            body.className -= " loader_body";
+            loader.style.display = "none"
+            nav.classList.remove("none")
+        }
+</script>
+</body>
+</html>
