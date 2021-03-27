@@ -4,7 +4,7 @@ Stay informed on the price of Bitcoin where ever you are.
 
 Introduction:
 
-This website retrives real time data about Bitcoin Prices over time from a data aggregator. This data is visualized in a graph or tabular format. The user can pick the range from the given choices([Week](https://visualbitcoin.herokuapp.com/week),[Month](https://visualbitcoin.herokuapp.com/month),[Year](https://visualbitcoin.herokuapp.com/year)).
+This website retrieves real time data about Bitcoin Prices over time from a data aggregator. This data is visualized in a graph or tabular format. The user can pick the range from the given choices([Week](https://visualbitcoin.herokuapp.com/week),[Month](https://visualbitcoin.herokuapp.com/month),[Year](https://visualbitcoin.herokuapp.com/year)).
 
 Technology Stack:
 
