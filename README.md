@@ -1,3 +1,3 @@
 Visual Bitcoin
 
-[Visual Bitcoin] (https://visualbitcoin.herokuapp.com)
+[Visual Bitcoin](https://visualbitcoin.herokuapp.com)
