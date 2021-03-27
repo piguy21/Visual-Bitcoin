@@ -6,8 +6,10 @@ Introduction:
 This website retrives real time data about Bitcoin Prices over time. This data is ploted on a line graph and displayed on the website. You can also see the data on a table. The user can pick range from the given choices(week, month, year).
 
 [Week](https://visualbitcoin.herokuapp.com/week)
-[Week](https://visualbitcoin.herokuapp.com/month)
-[Week](https://visualbitcoin.herokuapp.com/year)
+
+[Month](https://visualbitcoin.herokuapp.com/month)
+
+[Year](https://visualbitcoin.herokuapp.com/year)
 
 Technology Stack:
 Frontend- HTML, CSS, JavaScript
