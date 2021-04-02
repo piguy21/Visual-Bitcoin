@@ -34,21 +34,21 @@ def parse_json_data(data):
     return timestampList, rateList
 
 def get_data(formatdateweek, formatdatetoday, formatdatemonth, formatdateyear, sleeptime):
-    urlweek = f"https://api.nomics.com/v1/exchange-rates/history?key=dfdc6d255b17cd0f0dc2b289a162d5d0&currency=BTC&start={formatdateweek}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
+    urlweek = f"https://api.nomics.com/v1/exchange-rates/history?key=XXXXXX&currency=BTC&start={formatdateweek}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
 
     dataweek = requests.get(urlweek)
     dataweek = dataweek.json()
 
     time.sleep(1)
 
-    urlmonth = f"https://api.nomics.com/v1/exchange-rates/history?key=dfdc6d255b17cd0f0dc2b289a162d5d0&currency=BTC&start={formatdatemonth}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
+    urlmonth = f"https://api.nomics.com/v1/exchange-rates/history?key=XXXXXX&currency=BTC&start={formatdatemonth}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
 
     datamonth = requests.get(urlmonth)
     datamonth = datamonth.json()
 
     time.sleep(1)
 
-    urlyear = f"https://api.nomics.com/v1/exchange-rates/history?key=dfdc6d255b17cd0f0dc2b289a162d5d0&currency=BTC&start={formatdateyear}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
+    urlyear = f"https://api.nomics.com/v1/exchange-rates/history?key=XXXXXXXXXX&currency=BTC&start={formatdateyear}T00%3A00%3A00Z&end={formatdatetoday}T00%3A00%3A00Z"
 
     datayear = requests.get(urlyear)
     datayear = datayear.json()
